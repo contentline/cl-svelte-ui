@@ -1,0 +1,24 @@
+{
+  "name": "cl-svelte-ui",
+  "version": "1.0.0",
+  "description": "UI-kit  для Svelte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.contentline.ru/CONTENT_LINE/cl-svelte-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "svelte": "^3.0.0-alpha16",
+    "svelte-loader": "^2.12.0",
+    "svelte3_storybook": "^0.0.2"
+  }
+}
