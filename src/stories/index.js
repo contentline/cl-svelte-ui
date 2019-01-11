@@ -5,7 +5,7 @@ import MyButton from '../components/MyButton.svelte'
 storiesOf('MyButton', module).add('simple component example', () => ({
   Component: MyButton,
   data: {
-    buttonText: '123',
+    buttonText: 'Custom Text',
     rounded: true
   },
   on: {
