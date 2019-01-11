@@ -1,13 +1,17 @@
 <script>
   import { onMount } from 'svelte';
-  let count = 2
-  export let rounded
+  import Code from './common/CodeBlock.html'
+
   export let buttonText
-  const handler = () => count = count + 1
-  onMount(() => {
-    console.log(rounded, buttonText)
-  })
+  export let code = `
+
+    import Button from 'ui/Button'
+    export let buttonText = '123'
+
+    <Button>{buttonText}</Button>
+  `
 </script>
-<button on:click>{buttonText}</button>
-<p>{rounded ? 'rounded' : 'false'}</p>
-<p>{count}</p>
+<div>
+  <button on:click>{buttonText}</button>
+  <Code>{code}</Code>
+</div>
