@@ -1,15 +1,21 @@
 // Story about MyButton
 import { storiesOf } from 'svelte3_storybook'
 
-import MyButton from '../components/MyButton.svelte'
-storiesOf('MyButton', module).add('simple component example', () => ({
-  Component: MyButton,
+import DefaultCustomBtn from '../components/examples/CustomBtnExample/Default.html'
+import RoundedCustomBtn from '../components/examples/CustomBtnExample/Rounded.html'
+
+storiesOf('CustomButton', module).add('rounded button', () => ({
+  Component: RoundedCustomBtn,
   data: {
-    buttonText: 'Custom Text',
     rounded: true
   },
   on: {
     click: event => console.log(event)
   }
 
+})).add('default btn', () => ({
+  Component: DefaultCustomBtn,
+  data: {
+    rounded: false
+  }
 }))

@@ -1,0 +1,17 @@
+<script>
+  import Code from '../../common/CodeBlock.html'
+  import CustomButton from '../../CustomButton.html'
+
+  export let rounded
+  export let code = `
+
+    import CustomButton from 'ui/CustomButton'
+
+    <CustomButton rounded={true}>Custom Text</CustomButton>
+  `
+  //
+</script>
+<div>
+  <CustomButton rounded="{rounded}">Custom Text</CustomButton>
+  <Code>{code}</Code>
+</div>
