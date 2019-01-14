@@ -5,6 +5,7 @@ import replace from 'rollup-plugin-replace'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import { terser } from 'rollup-plugin-terser'
+import postcss from 'rollup-plugin-postcss'
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -25,7 +26,10 @@ module.exports = {
       generate: 'ssr',
       dev,
       hydratable: true,
-      emitCss: false
+      emitCss: true
+    }),
+    postcss({
+      plugins: []
     }),
     resolve(),
     commonjs(),
