@@ -4,12 +4,10 @@
   "description": "UI-kit  для Svelte",
   "main": "bundle.js",
   "scripts": {
+    "prepare": "rollup -c",
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook"
-  },
-  "scripts": {
-    "prepare": "rollup -c"
   },
   "repository": {
     "type": "git",
