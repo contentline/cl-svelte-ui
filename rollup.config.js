@@ -22,6 +22,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(mode)
     }),
     svelte({
+      generate: 'ssr',
       dev,
       hydratable: true,
       emitCss: true
