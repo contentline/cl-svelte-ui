@@ -1,8 +1,10 @@
 // Story about MyButton
 import { storiesOf } from 'svelte3_storybook'
 
-import DefaultCustomBtn from '../components/examples/CustomBtnExample/Default.html'
-import RoundedCustomBtn from '../components/examples/CustomBtnExample/Rounded.html'
+import {
+  DefaultCustomBtn,
+  RoundedCustomBtn
+} from '../components'
 
 storiesOf('CustomButton', module).add('rounded button', () => ({
   Component: RoundedCustomBtn,
