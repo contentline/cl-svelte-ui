@@ -25,7 +25,7 @@ module.exports = {
       generate: 'ssr',
       dev,
       hydratable: true,
-      emitCss: true
+      emitCss: false
     }),
     resolve(),
     commonjs(),
