@@ -1,5 +1,5 @@
-import CustomButton from './CustomButton.html'
+import Swiper from './Swiper.html'
 
 export {
-  CustomButton
+  Swiper
 }
