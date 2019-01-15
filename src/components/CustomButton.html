@@ -1,1 +1,7 @@
-<button>Test</button>
+<script>
+  import { onMount } from 'svelte'
+  export let text
+  onMount(() => console.log('mount'))
+</script>
+
+<button>{text || 'null Text'}</button>
