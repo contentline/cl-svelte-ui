@@ -3,21 +3,27 @@ import { storiesOf } from 'svelte3_storybook'
 
 import {
   DefaultCustomBtn,
-  RoundedCustomBtn
+  RoundedCustomBtn,
+  Welcome
 } from '../components/examples'
 
-storiesOf('CustomButton', module).add('rounded button', () => ({
-  Component: RoundedCustomBtn,
-  data: {
-    rounded: true
-  },
-  on: {
-    click: event => console.log(event)
-  }
-
-})).add('default btn', () => ({
-  Component: DefaultCustomBtn,
-  data: {
-    rounded: false
-  }
-}))
+storiesOf('Welcome', module)
+  .add('Svelte UI Library ', () => ({
+    Component: Welcome
+  }))
+storiesOf('CustomButton', module)
+  .add('rounded button', () => ({
+    Component: RoundedCustomBtn,
+    data: {
+      rounded: true
+    },
+    on: {
+      click: event => console.log(event)
+    }
+  }))
+  .add('default btn', () => ({
+    Component: DefaultCustomBtn,
+    data: {
+      rounded: false
+    }
+  }))
