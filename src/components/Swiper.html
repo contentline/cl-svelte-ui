@@ -4,8 +4,8 @@
   import '../css/swiper/swiper.min.css'
   export let api
   export let container
-  onMount(() => console.log('mountComponent'))
-  //onDestroy(() => api && api.destroy())
+  onMount(() => api = new SwiperComponent(container))
+  onDestroy(() => api && api.destroy())
 </script>
 <style>
   .swiper-container {
