@@ -4,7 +4,8 @@ import { storiesOf } from 'svelte3_storybook'
 import {
   DefaultCustomBtn,
   RoundedCustomBtn,
-  Welcome
+  Welcome,
+  DefaultSwiper
 } from '../components/examples'
 
 storiesOf('Welcome', module)
@@ -26,4 +27,9 @@ storiesOf('CustomButton', module)
     data: {
       rounded: false
     }
+  }))
+
+storiesOf.add('Swiper', module)
+  .add('default Swiper', () => ({
+    Component: DefaultSwiper
   }))
