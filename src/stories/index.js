@@ -29,7 +29,7 @@ storiesOf('CustomButton', module)
     }
   }))
 
-storiesOf.add('Swiper', module)
+storiesOf('Swiper', module)
   .add('default Swiper', () => ({
     Component: DefaultSwiper
   }))
