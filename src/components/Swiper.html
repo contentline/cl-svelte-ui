@@ -2,9 +2,8 @@
   import { onMount, onDestroy } from 'svelte'
   import SwiperComponent from 'swiper'
   import '../css/swiper/swiper.min.css'
-  export let api
-  export let container
-  onMount(() => api = new SwiperComponent(container))
+  export let api, container, options = {}
+  onMount(() => api = new SwiperComponent(container, options))
   onDestroy(() => api && api.destroy())
 </script>
 <style>
