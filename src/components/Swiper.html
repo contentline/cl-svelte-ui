@@ -1,0 +1,21 @@
+<script>
+  import { onMount, onDestroy } from 'svelte'
+  import SwiperComponent from 'swiper'
+  import '../css/swiper/swiper.min.css'
+  export let api, container, options = {}
+  onMount(() => api = new SwiperComponent(container, options))
+  onDestroy(() => api && api.destroy())
+</script>
+<style>
+  .swiper-container {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<!-- Slider main container -->
+  <div class="swiper-container" bind:this={container} id="target">
+    <div class="swiper-wrapper">
+      <slot></slot>
+    </div>
+  </div>
+

@@ -2,10 +2,8 @@
   "name": "cl-svelte-ui",
   "version": "1.0.0",
   "description": "UI-kit  для Svelte",
-  "main": "bundle.js",
+  "main": "src/components",
   "scripts": {
-    "prepare": "rollup -c",
-    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
@@ -31,7 +29,9 @@
     "rollup-plugin-terser": "^4.0.2",
     "svelte": "^3.0.0",
     "svelte-loader": "^2.12.0",
-    "svelte3_storybook": "^0.0.2"
+    "svelte3_storybook": "^0.0.2",
+    "swiper": "^4.4.6",
+    "typed.js": "^2.0.9"
   },
   "devDependencies": {
     "rollup-plugin-postcss": "^1.6.3"
