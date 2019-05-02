@@ -2,22 +2,21 @@
 import { storiesOf } from 'svelte3_storybook'
 
 import {
-  DefaultCustomBtn,
-  RoundedCustomBtn
+  Welcome,
+  DefaultSwiper,
+  ApiSwiper
 } from '../components/examples'
 
-storiesOf('CustomButton', module).add('rounded button', () => ({
-  Component: RoundedCustomBtn,
-  data: {
-    rounded: true
-  },
-  on: {
-    click: event => console.log(event)
-  }
-
-})).add('default btn', () => ({
-  Component: DefaultCustomBtn,
-  data: {
-    rounded: false
-  }
-}))
+// Welcome
+storiesOf('Welcome', module)
+  .add('Svelte UI Library ', () => ({
+    Component: Welcome
+  }))
+// Swiper
+storiesOf('Swiper', module)
+  .add('default Swiper', () => ({
+    Component: DefaultSwiper
+  }))
+  .add('use api', () => ({
+    Component: ApiSwiper
+  }))
