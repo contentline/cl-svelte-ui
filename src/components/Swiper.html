@@ -12,10 +12,12 @@
     width: 100%;
   }
 </style>
+
+<svelte:options accessors />
+
 <!-- Slider main container -->
   <div class="swiper-container" bind:this={container} id="target">
     <div class="swiper-wrapper">
       <slot></slot>
     </div>
   </div>
-
