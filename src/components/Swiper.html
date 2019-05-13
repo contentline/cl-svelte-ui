@@ -6,7 +6,13 @@
   export let api, container, containerClass = "", wrapperClass = "", options = {}
 
   onMount(() => api = new SwiperComponent(container, options))
-  onDestroy(() => api && api.destroy())
+  onDestroy(() => {
+    try {
+      api && api.destroy()
+    } catch (e) {
+      console.error(e)
+    }
+  })
 
   export const getApi = () => api
   export const update = () => api.update()
