@@ -5,7 +5,10 @@
 
   export let api, container, containerClass = "", wrapperClass = "", options = {}
 
-  onMount(() => api = new SwiperComponent(container, options))
+  onMount(() => {
+    api = new SwiperComponent(container, options)
+  })
+
   onDestroy(() => {
     try {
       api && api.destroy()
@@ -16,6 +19,7 @@
 
   export const getApi = () => api
   export const update = () => api.update()
+  
 </script>
 <style>
   .swiper-container {
