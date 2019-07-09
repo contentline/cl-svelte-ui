@@ -1,5 +1,5 @@
 {
-  "name": "cl-svelte-ui",
+  "name": "@content_line/cl-svelte-ui",
   "version": "1.0.0",
   "license": "MIT",
   "description": "UI-kit  для Svelte",
