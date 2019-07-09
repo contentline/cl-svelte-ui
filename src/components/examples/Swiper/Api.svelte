@@ -1,6 +1,6 @@
 <script>
-  import Code from '../../common/CodeBlock.html'
-  import Swiper from '../../Swiper.html'
+  import Code from '../../common/CodeBlock.svelte'
+  import Swiper from '../../Swiper.svelte'
   import { onMount } from 'svelte'
   export let swiperElem
   export let count

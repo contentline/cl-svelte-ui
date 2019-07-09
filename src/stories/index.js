@@ -1,16 +1,34 @@
-// Story about MyButton
-import { storiesOf } from 'svelte3_storybook'
+import { storiesOf } from '@storybook/svelte';
+import { action } from '@storybook/addon-actions';
+
+
+
 
 import {
   Welcome,
+  DefaultImage,
   DefaultSwiper,
-  ApiSwiper
+  SvelteSwiper,
+  ApiSwiper,
+  Select
 } from '../components/examples'
 
 // Welcome
 storiesOf('Welcome', module)
   .add('Svelte UI Library ', () => ({
     Component: Welcome
+  }))
+storiesOf('Image', module)
+  .add('default Image ', () => ({
+    Component: DefaultImage
+  }))
+storiesOf('SvelteSwiper', module)
+  .add('default Svelte Swiper', () => ({
+    Component: SvelteSwiper
+  }))
+storiesOf('Select', module)
+  .add('default Select', () => ({
+    Component: Select
   }))
 // Swiper
 storiesOf('Swiper', module)
