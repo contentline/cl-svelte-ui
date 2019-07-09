@@ -35,4 +35,6 @@
     <div class="swiper-wrapper {wrapperClass}">
       <slot></slot>
     </div>
+    <slot name="slide-prev"></slot>
+    <slot name="slide-next"></slot>
   </div>
