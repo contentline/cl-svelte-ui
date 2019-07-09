@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "UI-kit  для Svelte",
   "main": "src/components",
+  "author": "khanin",
   "dependencies": {
     "hammerjs": "^2.0.8",
     "swiper": "^4.5.0",
