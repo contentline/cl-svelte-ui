@@ -7,7 +7,7 @@
 
   const dispatch = createEventDispatcher()
 
-  export let data = [], name='', nullItem = { value: 0, text: '---' }, selectedItem = nullItem
+  export let data = [], name='', nullItem = { value: 0, text: '---' }, selectedItem = nullItem, required = true
 
   const defaultSelectedItem = selectedItem
 
@@ -35,7 +35,7 @@
 
 
 <div class="nice-select wide" tabindex="0" class:open={show} on:click={toggleClickHandle}>
-  <select style='display: none' value={selectedItem.value} {name}>
+  <select style='display: none' value={selectedItem.value} {name} {required}>
     {#each resultData as { value, text }}, index}
       <option {value}>{text}</option>
     {/each}
