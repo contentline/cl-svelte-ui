@@ -7,7 +7,7 @@
 
   const dispatch = createEventDispatcher()
 
-  export let data = [], name='', nullItem = { value: 0, text: '---' }, selectedItem = nullItem, required = true
+  export let data = [], name='', nullItem = { value: '', text: '---' }, selectedItem = nullItem, required = true
 
   const defaultSelectedItem = selectedItem
 
@@ -52,5 +52,13 @@
     {/each}
   </ul>
 </div>
+
+<style>
+  select {
+    opacity: 0!important;
+    width: 0!important;
+    border: 1px solid transparent!important;
+  }
+</style>
 
 
