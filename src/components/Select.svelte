@@ -35,7 +35,7 @@
 
 
 <div class="nice-select wide" tabindex="0" class:open={show} on:click={toggleClickHandle}>
-  <select style='display: none' value={selectedItem.value} {name} {required}>
+  <select value={selectedItem.value} {name} {required}>
     {#each resultData as { value, text }}, index}
       <option {value}>{text}</option>
     {/each}
