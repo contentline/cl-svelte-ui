@@ -6,7 +6,7 @@
   onDestroy(() => window.removeEventListener('click', closeClickHandle))
 
   const dispatch = createEventDispatcher()
-
+  let selectWrapper
   export let data = [], name='', nullItem = { value: '', text: '---' }, selectedItem = nullItem, required = true
 
   const defaultSelectedItem = selectedItem
@@ -25,16 +25,20 @@
     dispatch('change', selectedItem)
   }
   const toggleClickHandle = e => {
-    e.stopPropagation()
     show = !show
   }
-  const closeClickHandle = e => show = false
+
+  const closeClickHandle = e => {
+    if (!selectWrapper.contains(e.target)) {
+      show = false
+    }
+  }
   $: resultData = [ nullItem, ...data ]
 </script>
 
 
 
-<div class="nice-select wide" tabindex="0" class:open={show} on:click={toggleClickHandle}>
+<div class="nice-select wide" tabindex="0" class:open={show} on:click={toggleClickHandle} bind:this={selectWrapper}>
   <select value={selectedItem.value} {name} {required} on:invalid={invalidHandle}>
     {#each resultData as { value, text }, index}
       <option {value}>{text}</option>
