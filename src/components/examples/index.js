@@ -4,6 +4,7 @@ import ApiSwiper from './Swiper/Api.svelte'
 import DefaultImage from './Image/Default.svelte'
 import SvelteSwiper from './Svelte_Swiper/Default.svelte'
 import Select from './Select/Default.svelte'
+import VerticalSlider from './VericalSlider/Default.svelte'
 
 export {
   Welcome,
@@ -11,5 +12,6 @@ export {
   DefaultSwiper,
   DefaultImage,
   ApiSwiper,
-  Select
+  Select,
+  VerticalSlider
 }

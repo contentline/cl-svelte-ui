@@ -10,7 +10,8 @@ import {
   DefaultSwiper,
   SvelteSwiper,
   ApiSwiper,
-  Select
+  Select,
+  VerticalSlider
 } from '../components/examples'
 
 // Welcome
@@ -22,13 +23,13 @@ storiesOf('Image', module)
   .add('default Image ', () => ({
     Component: DefaultImage
   }))
-storiesOf('SvelteSwiper', module)
-  .add('default Svelte Swiper', () => ({
-    Component: SvelteSwiper
-  }))
 storiesOf('Select', module)
   .add('default Select', () => ({
     Component: Select
+  }))
+storiesOf('VerticalSlider', module)
+  .add('default VerticalSlider', () => ({
+    Component: VerticalSlider
   }))
 // Swiper
 storiesOf('Swiper', module)
