@@ -15,7 +15,8 @@
 
   let show = false
   const invalidHandle = e => dispatch('invalid', e)
-  const itemClickHandle = dataItem => e => {
+  const itemClickHandle = (e, dataItem) => {
+    console.log('dataItem', dataItem)
     e.stopPropagation()
     if (dataItem.disabled) {
       return
@@ -48,7 +49,7 @@
   <ul class="list">
     {#each resultData as optionItem}
       <li
-        on:click={itemClickHandle(optionItem)}
+        on:click={e => itemClickHandle(e, optionItem)}
         class="option"
         class:selected={selectedItem.value === optionItem.value}
         class:disabled={optionItem.disabled}
