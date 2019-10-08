@@ -16,7 +16,6 @@
   let show = false
   const invalidHandle = e => dispatch('invalid', e)
   const itemClickHandle = (e, dataItem) => {
-    console.log('dataItem', dataItem)
     e.stopPropagation()
     if (dataItem.disabled) {
       return
@@ -36,7 +35,6 @@
   }
   $: resultData = [ nullItem, ...data ]
 </script>
-
 
 
 <div class="nice-select wide" tabindex="0" class:open={show} on:click={toggleClickHandle} bind:this={selectWrapper}>
