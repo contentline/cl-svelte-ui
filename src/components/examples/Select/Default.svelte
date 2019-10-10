@@ -29,14 +29,14 @@
       <Select {data}/>
     </div>
   `
-  let form
-  const data = [
+  let form, data = [], toggle = false
+  const firstData = [
     {
-      text: 'Первый',
+      text: 'ГБУЗ МО "Синьковская участковая больница ГБУЗ МО "Синьковская участковая больница""',
       value: 1
     },
     {
-      text: 'Второй',
+      text: 'ГБУЗ МО "Синьковская участковая больница"',
       value: 2
     },
     {
@@ -45,6 +45,21 @@
       disabled: true
     }
   ]
+  const secondData = [
+    {
+      text: 'test',
+      value: 1
+    },
+    {
+      text: 'test',
+      value: 2
+    },
+    {
+      text: 'test Disabled',
+      value: 3,
+      disabled: true
+    }
+]
   const submitHandle = async e => {
     e.preventDefault()
     const body = new FormData(form)
@@ -56,6 +71,10 @@
 
     const json = JSON.parse(res.responseText)
   }
+  const toggleHandle = () => {
+    data = toggle ? firstData : secondData
+    toggle = !toggle
+  }
 </script>
 
 <style>
@@ -65,11 +84,13 @@
   }
 </style>
 
+  <p>data: {JSON.stringify(data)}<p>
 <form on:submit={submitHandle} bind:this={form}>
   <div class='wrapper'>
     <Select {data} name='test' />
   </div>
   <button type='submit'>Отправить</button>
 </form>
+  <button on:click={toggleHandle}>Изменить данные</button>
 
 <Code>{code}</Code>

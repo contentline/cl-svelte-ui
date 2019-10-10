@@ -1,12 +1,12 @@
 .nice-select {
   -webkit-tap-highlight-color: transparent;
+  display: flex;
   background-color: #fff;
   border-radius: 5px;
   border: solid 1px #e8e8e8;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
-  display: block;
   font-family: inherit;
   font-size: 14px;
   font-weight: normal;
@@ -25,6 +25,12 @@
           user-select: none;
   white-space: nowrap;
   width: auto; }
+  .nice-select .current {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .nice-select:hover {
     border-color: #dbdbdb; }
   .nice-select:active, .nice-select.open, .nice-select:focus {
