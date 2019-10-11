@@ -3,7 +3,7 @@
   import '../css/nice-select/nice-select.css'
 
   onMount(() => window.addEventListener('click', closeClickHandle))
-  onDestroy(() => window.removeEventListener('click', closeClickHandle))
+  onDestroy(() => typeof window !== 'undefined' && window.removeEventListener('click', closeClickHandle))
 
   const dispatch = createEventDispatcher()
   let selectWrapper
