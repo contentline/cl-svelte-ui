@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import SimpleBarJS from 'simplebar';
-  import 'simplebar/dist/simplebar.css';
+  //import 'simplebar/dist/simplebar.css';
   onMount(() => {
     bar = new SimpleBarJS(scrollElem, options)
   })
@@ -206,7 +206,9 @@
     overflow-y: hidden;
     overflow-x: scroll;
   }
-
+  .simplebar-scrollbar.simplebar-visible {
+    display: none!important;
+  }
 </style>
 
 <div bind:this={scrollElem}  style='max-height: 100%; width: 100%;'>
