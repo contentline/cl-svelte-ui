@@ -6,8 +6,14 @@
 
 <style>
   .container {
-    max-height: 400px;
+    max-height: 600px;
+    max-width: 400px;
     display: flex;
+  }
+  @media(max-width: 500px) {
+    .container {
+      max-height: 100%;
+    }
   }
 </style>
 
