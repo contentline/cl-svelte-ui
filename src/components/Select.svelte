@@ -93,6 +93,7 @@
   ul {
     padding: 0;
     margin: 0;
+    width: 100%;
   }
   .list {
     display: flex;
