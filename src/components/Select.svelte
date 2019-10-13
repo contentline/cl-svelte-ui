@@ -1,17 +1,22 @@
 <script>
-  import { onMount, onDestroy, createEventDispatcher, afterUpdate }  from 'svelte'
+  import { onMount, onDestroy, createEventDispatcher } from 'svelte'
   import '../css/nice-select/nice-select.css'
-  import SimpleBar from 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
-  import 'simplebar/dist/simplebar.css';
+  import CustomScrollBar from "./CustomScrollBar.svelte";
+
   onMount(() => {
-      window.addEventListener('click', closeClickHandle)
-      //console.log('listElem', listElem)
-      bar = new SimpleBar(listElem)
+    window.addEventListener('click', closeClickHandle)
   })
   onDestroy(() => typeof window !== 'undefined' && window.removeEventListener('click', closeClickHandle))
   const dispatch = createEventDispatcher()
-  let selectWrapper, listElem, bar
-  export let data = [], name='', nullItem = { value: '', text: '---' }, selectedItem = nullItem, required = true
+  let selectWrapper, listElem
+  export let data = [],
+    name = '',
+    nullItem = {value: '', text: '---'},
+    selectedItem = nullItem,
+    required = true,
+    customScroll = false,
+    customScrollOptions = {},
+    customScrollElem
 
   const defaultSelectedItem = selectedItem
 
@@ -28,16 +33,18 @@
     show = false
     dispatch('change', selectedItem)
   }
-  const toggleClickHandle = e => {
-    show = !show
-  }
+  const toggleClickHandle = e => show = !show
 
   const closeClickHandle = e => {
     if (!selectWrapper.contains(e.target)) {
       show = false
     }
   }
-  $: resultData = [ nullItem, ...data ]
+  const updateResultData = () => {
+    reset()
+    return [ nullItem, ...data ]
+  }
+  $: resultData = data && data.length && updateResultData()
 </script>
 
 
@@ -48,42 +55,33 @@
     {/each}
   </select>
   <span class="current">{selectedItem.text}</span>
-    <ul class="list">
-        <div bind:this={listElem}  style='max-height: 300px;'>
-            <div class="simplebar-wrapper">
-                <div class="simplebar-height-auto-observer-wrapper">
-                    <div class="simplebar-height-auto-observer" />
-                </div>
-                <div class="simplebar-mask">
-                    <div class="simplebar-offset">
-                        <div class='simplebar-content-wrapper'>
-                            <div class="simplebar-content">
-                                <div>
-                                  {#each resultData as optionItem}
-                                    <li
-                                            on:click={e => itemClickHandle(e, optionItem)}
-                                    class="option"
-                                    class:selected={selectedItem.value === optionItem.value}
-                                    class:disabled={optionItem.disabled}
-                                    >{optionItem.text}</li>
-                                  {/each}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="simplebar-placeholder" />
-            </div>
-            <div className="simplebar-track simplebar-horizontal">
-                <div className="simplebar-scrollbar" />
-            </div>
-            <div className="simplebar-track simplebar-vertical">
-                <div className="simplebar-scrollbar" />
-            </div>
-        </div>
-
-    </ul>
-
+    <div class="list" class:defaultScroll={!customScroll}>
+      {#if customScroll}
+        <CustomScrollBar bind:bar={customScrollElem} options={customScrollOptions}>
+          <ul>
+            {#each resultData as optionItem}
+              <li
+                on:click={e => itemClickHandle(e, optionItem)}
+              class="option"
+              class:selected={selectedItem.value === optionItem.value}
+              class:disabled={optionItem.disabled}
+              >{optionItem.text}</li>
+            {/each}
+          </ul>
+        </CustomScrollBar>
+        {:else}
+          <ul>
+            {#each resultData as optionItem}
+              <li
+                on:click={e => itemClickHandle(e, optionItem)}
+              class="option"
+              class:selected={selectedItem.value === optionItem.value}
+              class:disabled={optionItem.disabled}
+              >{optionItem.text}</li>
+            {/each}
+          </ul>
+      {/if}
+    </div>
 </div>
 
 <style>
@@ -91,6 +89,17 @@
     opacity: 0!important;
     width: 0!important;
     border: 1px solid transparent!important;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  .list.defaultScroll {
+    overflow: auto;
+    max-height: 300px;
+  }
+  .list .option {
+    white-space: normal;
   }
 </style>
 

@@ -11,7 +11,8 @@ import {
   SvelteSwiper,
   ApiSwiper,
   Select,
-  VerticalSlider
+  VerticalSlider,
+  CustomScrollBar
 } from '../components/examples'
 
 // Welcome
@@ -30,6 +31,10 @@ storiesOf('Select', module)
 storiesOf('VerticalSlider', module)
   .add('default VerticalSlider', () => ({
     Component: VerticalSlider
+  }))
+storiesOf('CustomScrollBar', module)
+  .add('default CustomScrollBar', () => ({
+    Component: CustomScrollBar
   }))
 // Swiper
 storiesOf('Swiper', module)

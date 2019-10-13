@@ -1,11 +1,24 @@
+const code = `
 <script>
-  import Code from '../../common/CodeBlock.svelte'
   import Select from '../../Select.svelte'
-  import CodeText from './code'
-  import { onMount } from 'svelte'
-  let form, data = [], toggle = false, selectElem, customScrollObject
 
-  onMount(() => console.log('customScrollObject', customScrollObject))
+  let form, data = [], toggle = false
+  const firstData = [
+    {
+      text: 'ГБУЗ МО "Синьковская участковая больница ГБУЗ МО "Синьковская участковая больница""',
+      value: 1
+    },
+    {
+      text: 'ГБУЗ МО "Синьковская участковая больница"',
+      value: 2
+    },
+    {
+      text: 'Третий Disabled',
+      value: 3,
+      disabled: true
+    },
+  ]
+
   const submitHandle = async e => {
     e.preventDefault()
     const body = new FormData(form)
@@ -17,9 +30,8 @@
 
     const json = JSON.parse(res.responseText)
   }
-  const createData = number => Array.from({ length: number }).map((item, index) => ({ text: index + 1, value: index }))
   const toggleHandle = () => {
-    data = createData(toggle ? 5 : 10)
+    data = toggle ? firstData : [ ...firstData, ...firstData ]
     toggle = !toggle
   }
 </script>
@@ -34,10 +46,11 @@
 
   <form on:submit={submitHandle} bind:this={form}>
     <div class='wrapper'>
-      <Select bind:this={selectElem} bind:customScrollElem={customScrollObject} data={data} name='test' customScroll={true} customScrollOptions={{autoHide: false}} />
+      <Select data={data} name='test' />
     </div>
     <button type='submit'>Отправить</button>
   </form>
   <button on:click={toggleHandle}>Изменить данные</button>
-  <Code>{CodeText}</Code>
+`
 
+export default code
