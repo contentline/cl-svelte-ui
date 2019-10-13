@@ -5,11 +5,11 @@
   onMount(() => {
     bar = new SimpleBarJS(scrollElem, options)
   })
-  export let options = {}, bar, maxHeight = 300
+  export let options = {}, bar
     let scrollElem
 </script>
 
-<div bind:this={scrollElem}  style={`max-height: ${maxHeight}px;`}>
+<div bind:this={scrollElem}  style='max-height: 100%; width: 100%;'>
   <div class="simplebar-wrapper">
     <div class="simplebar-height-auto-observer-wrapper">
       <div class="simplebar-height-auto-observer" />

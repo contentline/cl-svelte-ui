@@ -94,6 +94,10 @@
     padding: 0;
     margin: 0;
   }
+  .list {
+    display: flex;
+    max-height: 300px;
+  }
   .list.defaultScroll {
     overflow: auto;
     max-height: 300px;

@@ -6,7 +6,8 @@
 
 <style>
   .container {
-
+    max-height: 400px;
+    display: flex;
   }
 </style>
 
