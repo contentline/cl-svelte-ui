@@ -36,11 +36,11 @@
     }
 </style>
 <div>
-  <Swiper bind:this={swiperElem} options={{ slidesPerView: 'auto', spaceBetween: 10}}>
-    <div class="swiper-slide"><img src='/images/1.jpg' alt="image" /></div>
-    <div class="swiper-slide"><img src='/images/2.jpg' alt="image" /></div>
-    <div class="swiper-slide"><img src='/images/3.jpg' alt="image" /></div>
-    <div class="swiper-slide"><img src='/images/4.jpg' alt="image" /></div>
-  </Swiper>
+  <Swiper bind:this={swiperElem} options={{ slidesPerView: 1, spaceBetween: 10, lazy: true }}>
+  <div class="swiper-slide"><img src='/images/1.jpg' alt="image" /></div>
+  <div class="swiper-slide"><img src='/images/2.jpg' alt="image" /></div>
+  <div class="swiper-slide"><img src='/images/3.jpg' alt="image" /></div>
+  <div class="swiper-slide"><img src='/images/4.jpg' alt="image" /></div>
+</Swiper>
   <Code>{CodeText}</Code>
 </div>

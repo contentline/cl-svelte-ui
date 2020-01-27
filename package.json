@@ -27,7 +27,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "rollup-pluginutils": "^2.8.1",
     "simplebar": "^4.2.3",
-    "swiper": "^4.5.0",
+    "swiper": "^5.3.0",
     "typed.js": "^2.0.10"
   },
   "devDependencies": {

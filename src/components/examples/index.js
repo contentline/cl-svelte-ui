@@ -6,6 +6,7 @@ import SvelteSwiper from './Svelte_Swiper/Default.svelte'
 import Select from './Select/Default.svelte'
 import VerticalSlider from './VerticalSlider/Default.svelte'
 import CustomScrollBar from './CustomScrollBar/Default.svelte'
+import GallerySwiper from './Swiper/Gallery.svelte'
 export {
   Welcome,
   SvelteSwiper,
@@ -14,5 +15,6 @@ export {
   ApiSwiper,
   Select,
   VerticalSlider,
-  CustomScrollBar
+  CustomScrollBar,
+  GallerySwiper
 }

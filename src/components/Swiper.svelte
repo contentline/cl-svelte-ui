@@ -6,6 +6,7 @@
   export let api, container, containerClass = "", wrapperClass = "", options = {}
 
   onMount(() => {
+    console.log('options', options)
     api = new SwiperComponent(container, options)
   })
 
@@ -35,6 +36,7 @@
     <div class="swiper-wrapper {wrapperClass}">
       <slot></slot>
     </div>
+    <slot name="pagination"></slot>
     <slot name="slide-prev"></slot>
     <slot name="slide-next"></slot>
   </div>

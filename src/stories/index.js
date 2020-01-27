@@ -10,6 +10,7 @@ import {
   DefaultSwiper,
   SvelteSwiper,
   ApiSwiper,
+  GallerySwiper,
   Select,
   VerticalSlider,
   CustomScrollBar
@@ -43,4 +44,7 @@ storiesOf('Swiper', module)
   }))
   .add('use api', () => ({
     Component: ApiSwiper
+  }))
+  .add('use gallery', () => ({
+    Component: GallerySwiper
   }))
