@@ -64,9 +64,16 @@
     height: 100%; /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
     width: auto;
     visibility: visible;
-    overflow: auto; /* Scroll on this element otherwise element can't have a padding applied properly */
     max-width: 100%; /* Not required for horizontal scroll to trigger */
     max-height: 100%; /* Needed for vertical scroll to trigger */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .simplebar-content-wrapper::-webkit-scrollbar,
+  .simplebar-hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 
   .simplebar-content:before,
@@ -137,8 +144,8 @@
 
   .simplebar-scrollbar {
     position: absolute;
-    right: 2px;
-    width: 7px;
+    left: 0;
+    right: 0;
     min-height: 10px;
   }
 
@@ -147,14 +154,13 @@
     content: '';
     background: black;
     border-radius: 7px;
-    left: 0;
-    right: 0;
+    left: 2px;
+    right: 2px;
     opacity: 0;
     transition: opacity 0.2s linear;
   }
 
-  .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
-    /* When hovered, remove all transitions from drag handle */
+  :global(.simplebar-track .simplebar-scrollbar.simplebar-visible:before) {
     opacity: 0.5;
     transition: opacity 0s linear;
   }
@@ -206,8 +212,14 @@
     overflow-y: hidden;
     overflow-x: scroll;
   }
-  .simplebar-scrollbar.simplebar-visible {
-    display: none!important;
+
+  .simplebar-hide-scrollbar {
+    position: fixed;
+    left: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 </style>
 
